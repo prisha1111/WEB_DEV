@@ -78,7 +78,7 @@ let array1=[1,2,3,4];
 //     }
 // }
 function reduce(x, y) {
-    //x->accumulator, y->current
+    //x->accumulator, y->current 
     return x + y;
 }
 
