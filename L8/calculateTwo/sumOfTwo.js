@@ -4,5 +4,5 @@ function sumOfTwo(a,b){
 }
 
 
-// var xy=200;
-module.exports={sumOfTwo};
+var xy=200;
+module.exports={sumOfTwo,xy};

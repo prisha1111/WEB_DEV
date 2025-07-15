@@ -30,7 +30,7 @@ const divOfTwo=require('./calculateTwo/divOfTwo');
 //     return a+b;
 // }
 
-// console.log("XY",xy);
+console.log("XY",xy);
 sumOfTwo(10,20);
 mulOfTwo(10,20);
 divOfTwo(20,10);
