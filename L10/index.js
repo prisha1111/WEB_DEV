@@ -77,9 +77,7 @@
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 const https = require('node:https');
-// const https = require('https');
 const fs = require('node:fs');
-
 fs.readFile('./something.txt', 'utf8', (err, data) => {
   if (err) {
     console.error(err);
@@ -89,27 +87,31 @@ fs.readFile('./something.txt', 'utf8', (err, data) => {
 });
 
 setTimeout(()=>{
-    console.log("this is settimeout");
+    console.log("THIS IS SETTIMOUT")
 },0)
 
 https.get('https://encrypted.google.com/', (res) => {
-    console.log("this is api data");
-}).on('error', (e) => { 
+    console.log("THIS IS API DATA")
+
+}).on('error', (e) => {
   console.error(e);
 });
 
 setImmediate(()=>{
-    console.log("next tick");
+    console.log("SET IMMEDIATE")
 })
+
 setTimeout(()=>{
-  console.log("this is settimeout");
-})
-process.nextTick(()=>{
-    console.log("next tick2");
-})
-console.log("hello");
-
+    console.log("THIS IS SETTIMOUT")
+},0)
 
 process.nextTick(()=>{
-    console.log("next tick2");
+    console.log("NEXT TICK")
 })
+
+console.log("HELLOOOO")
+
+process.nextTick(()=>{
+    console.log("NEXT TICK 2")
+})
+
