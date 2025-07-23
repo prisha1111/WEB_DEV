@@ -1,0 +1,30 @@
+{
+  "name": "npm-packagee",
+  "version": "1.0.2",
+  "description": "this is first npm package",
+  "homepage": "https://github.com/prisha1111/WEB_DEV#readme",
+  "bugs": {
+    "url": "https://github.com/prisha1111/WEB_DEV/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prisha1111/WEB_DEV.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5"
+  },
+  "publishConfig": {
+  "access": "public"
+}
+
+}
