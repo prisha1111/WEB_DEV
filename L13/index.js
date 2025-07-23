@@ -1,0 +1,5 @@
+const { add,sub,div,multiply } = require("npm-packagee")
+console.log(add)
+console.log(sub)
+console.log(div)
+console.log(multiply)
