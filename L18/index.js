@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const birds=require('./birds')
 // app.METHOD(Path,method)
 // GET method route
 
@@ -9,7 +10,7 @@ const port = 3000
 //   console.log('Accessing the secret section ...')
 //   next() // pass control to the next handler
 // })
-
+app.use('/birds',birds);
 // app.get('/', (req, res) => {
 //   res.send('GET request to the homepage')
 // })
