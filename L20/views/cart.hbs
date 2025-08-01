@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Cart</title>
+    </head>
+    <body>
+        {{> navbar}}
+        {{#each cart}}
+  {{>person person=.}}
+  
+{{/each}}
+    </body>
+</html>
