@@ -17,6 +17,17 @@ async function main() {
       },
     },
   })
+  //  data: {
+  //     name: 'Alicee',
+  //     email: 'alicee@prisma.io',
+  //     posts: {
+  //       create: { title: 'Hello World' },
+  //     },
+  //     profile: {
+  //       create: { bio: 'I like turtles' },
+  //     },
+  //   },
+  // })
 
   const allUsers = await prisma.user.findMany({
     include: {
