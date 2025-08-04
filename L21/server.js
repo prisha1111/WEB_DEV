@@ -20,15 +20,15 @@ const PORT = process.env.PORT || 4500;
 const DATABASE_URL=process.env.DATABASE_URL;
 const DATABASE_NAME=process.env.DATABASE_NAME;
 
-const serverStarted=async()=>{
-    try{
-        await mongoose.connect(DATABASE_URL).then(() => console.log('Connected!: ${DATABASE_NAME}'));
-       app.listen(PORT, () => {
-       console.log(`Server running on port ${PORT}`)
+const serverStarted = async () => {
+  try {
+    await mongoose.connect(DATABASE_URL).then(() => console.log(`Database Connected SuccessfullyS! : ${DATABASE_NAME}`));
+    app.listen(PORT, () => {
+      console.log(`Your Server Running on ${PORT}`);
     });
-    }catch(err){
-    console.log(err)
-    }
+  } catch (err) {
+    console.log(err);
+  }
 };
 serverStarted();
 
