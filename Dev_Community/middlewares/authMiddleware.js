@@ -1,22 +1,35 @@
-const jwt=require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const User = require("../models/userModel")
 
-const authMiddleware = async(req,res,next)=>{
-    const { authorization } = req.headers;
-    console.log(authorization);
-    // console.log(req);
+
+const authMiddleware = async (req,res,next)=>{
+    const { authorization} = req.headers; 
+    const token = authorization.split(" ")[1];
+
+    const user = await jwt.verify(token, process.env.JWT_SECRET_KEY);
+    // console.log(user);
+
+    if(!user){
+        res.status(401).json({
+            message: "Unauthorized User"
+        })
+    }
+
+    const userFind = await User.find({_id});
+
+    const { _id} = userFind;
+    console.log(_id)
     
-    const token=authorization.split(" ")[1]
-    // console.log(token); 
-
-    const tokenObject=await jwt.verify(token,process.env.JWT_SECRET_KEY);
-
-    const { _id}=tokenObject;
-    console.log(_id);
-    //find in db with that id->if present then next(),else return
-
-
+    if(userFind.length==0){
+        res.status(404).json({
+            message: "User Not Found"
+        })
+    }
+    
+    req.userData = user;
+    
     next();
 }
 
-//one more middleware to make
+
 module.exports = { authMiddleware};

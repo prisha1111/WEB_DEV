@@ -6,7 +6,7 @@ require("dotenv").config();
 const dbConnect = require("./config/database");
 
 const userRouter = require("./routes/userRoutes");
-const profileRoutes=require("./routes/profileRoutes")
+const profileRouter = require("./routes/profileRoutes");
 
 //SET INSTANCES HERE ONLY
 const app = express();
@@ -23,14 +23,16 @@ app.use(express.json());
 
 //WE WILL MAKE ROUTES
 
-app.use("/api/user",userRouter)
+app.use("/api/user",userRouter);
 
-app.use("/api/user/profile",profileRoutes)
+app.use("/api/profile/", profileRouter )
+
+
 
 // ERROR HANDLER
 
 app.use("/", function (req,res){
-  res.status(500).json({message: "something"});
+  res.status(500).json({message: "SOMETHING HAPPENED"});
 })
 
 

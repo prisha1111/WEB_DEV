@@ -1,9 +1,10 @@
 const express = require("express");
-const { addProfileDetails} = require("../controllers/profileControllers");
+const { addProfileDetails,getProfileDetails} = require("../controllers/profileControllers");
 const{authMiddleware}=require("../middlewares/authMiddleware")
 const router = express.Router();
 
-router.post("/",authMiddleware,addProfileDetails);
+router.get("/",authMiddleware, getProfileDetails)
+router.post("/",authMiddleware,addProfileDetails)
 
 
 
